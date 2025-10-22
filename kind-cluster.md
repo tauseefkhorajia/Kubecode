@@ -49,7 +49,7 @@ Download the latest version of KIND binary:
 [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-amd64
 
 chmod +x ./kind
-mv ./kind /some-dir-in-your-PATH/kind
+sudo mv ./kind /usr/local/bin/kind
 
 kind version
 ```
