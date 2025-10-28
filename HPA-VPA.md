@@ -113,6 +113,12 @@ spec:
       target:
         type: Utilization
         averageUtilization: 20
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 50
 ```
 Apply the HPA:
 ```bash
@@ -137,7 +143,7 @@ kubectl run -i --tty load-generator --image=busybox --restart=Never -- /bin/sh
 ```
 Inside the container, run:
 ```bash
-while true; do wget -q -O- http://nginx-service.default.svc.cluster.local; done
+while true; do wget -q -O- http://65.2.39.125:80; done
 ```
 In another terminal, watch the HPA activity:
 ```bash
